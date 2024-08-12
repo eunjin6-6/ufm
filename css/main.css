@@ -1,3 +1,117 @@
 @charset 'utf-8';
 @import url(reset.css);
 
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+/* 변수 */
+:root{
+  --txt-color: #222;
+  --white: white;
+  --container: 1350px;
+  --fz: 16px;
+  --lh: 27px;
+}
+
+/* LAYOUT */
+.container{
+  width: var(--container);
+  margin: 0 auto;
+}
+
+
+/* TYPOGRAPHY */
+body{
+  font-family: Pretendard;
+  font: var(--fz)/var(--lh) Pretendard, sans-serif;
+}
+
+
+/* BUTTON */
+
+
+/*top_content*/
+
+.top_nav {
+  width: 100vw;
+  height: 100px;
+  background: var(--white);
+}
+.top_nav h1 a{
+  width: 232px;
+  height: 36px;
+  text-indent: -9999em;
+  overflow: hidden;
+}
+.top_nav header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top_nav nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.top_nav nav .main_menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex: 1;
+}
+.top_nav nav .sitemap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.banner li{
+  display: none;
+} 
+.banner li.active{
+  display: block;
+} 
+/*solution*/
+
+/* solution */
+.accordion_list{
+  display: flex;
+}
+.inner_box{
+  display: none;
+}
+.accordion_list li{
+  flex:1;
+  transition: flex 0.5s;
+}
+.accordion_list li:hover,
+.accordion_list li.active{
+  flex:10;
+}
+.accordion_list li.active .inner_box{
+  display: block;
+}
+.accordion_list li:nth-child(1) .inner_box{
+  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(2) .inner_box{
+  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(3) .inner_box{
+  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(4) .inner_box{
+  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+}
+
+/* business */
+/* performance */
+/* customer_support */
+/* partners */
+/* footer */

@@ -6,7 +6,7 @@
 /* 변수 */
 :root{
   --txt-color: #222;
-  --white: white;
+  --white: #fff;
   --container: 1350px;
   --fz: 16px;
   --lh: 27px;
@@ -34,7 +34,12 @@ body{
 .top_nav {
   width: 100vw;
   height: 100px;
-  background: var(--white);
+  background: #ccc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 .top_nav h1 a{
   width: 232px;
@@ -42,11 +47,11 @@ body{
   text-indent: -9999em;
   overflow: hidden;
 }
+.top_nav h1 a img{
+  width: 232px;
+  height: 36px;
+}
 .top_nav header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +78,13 @@ body{
 
 .banner li{
   display: none;
-} 
+  position: relative;
+}
+.banner .banner_desc{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .banner li.active{
   display: block;
 } 

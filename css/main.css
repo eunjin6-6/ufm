@@ -9,6 +9,7 @@
   --white: #fff;
   --Primary-color: #18257E;
   --sub-color: #279ADB;
+  --medium-gray: #777;
   --container: 1350px;
   --font-base:16px;
   --line-base:27px;
@@ -258,6 +259,36 @@ body{
 }
 
 /* business */
+.business ul{
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+}
+.business ul li{
+  position: relative;
+}
+.business ul li a{
+  position: absolute; 
+  right: 0;
+  top: 244px;
+  width: 80px;
+  height: 80px;
+  background: var(--sub-color);
+  text-align: center;
+  line-height: 80px;
+  color: var(--white);
+}
+.business ul li h4{
+  margin-top:calc(var(--line-base) * 2);
+  font-size: var(--line-base);
+  font-weight: 700;
+}
+.business ul li p{
+  margin-top: 20px;
+  color: var(--medium-gray);
+
+}
+
 /* performance */
 /* customer_support */
 /* partners */

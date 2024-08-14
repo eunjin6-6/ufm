@@ -35,13 +35,29 @@
   padding-top: var(--line-base);
   padding-bottom: var(--line-base);
 }
+main section {
+  padding: calc(var(--line-base) * 5) 0;
+}
 
 /* TYPOGRAPHY */
 body{
   font:var(--font-base)/var(--line-base) Pretendard, sans-serif;
   font-weight: 400;
+  color: var(--txt-color);
 }
-
+.sec_tit{
+  font-size: 44px;
+  line-height: calc(var(--line-base) * 2);
+  font-weight: 700;
+  text-align: center;
+}
+.sec_sub_tit{
+  font-size: 20px;
+  line-height: var(--line-base);
+  font-weight: 700;
+  color: var(--Primary-color);
+  text-align: center;
+}
 
 /*top_content*/
 
@@ -117,7 +133,9 @@ body{
 
 
 /* banner */
-
+.banner{
+  position: relative;
+}
 .banner .banner_content li{
   display: none;
 }
@@ -130,15 +148,14 @@ body{
   position: absolute;
   width: 100vw;
   height: 100vh;
-  padding: 20px 0;
-  background: rgba(34,34,34,.5);
+  background: rgba(34,34,34,.6);
 }
 .banner .container{
   position: relative;
 }
 .banner .banner_desc{
   position: absolute;
-  top: 280px;
+  top: 240px;
   left: 0;
   color: var(--white);
 }
@@ -187,14 +204,27 @@ body{
 .banner .banner_content img{
   width: 100vw;
   height: 100vh;
+  object-fit: cover;
+}
+.banner .banner_pager{
+  position: absolute;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  bottom: 85px;
+  gap: 2px;
 }
 
+.banner_pager a{
+  width: 80px;
+  height: 6px;
+  text-indent: -9999em;
+  background: var(--white);
+}
+.banner_pager a.active{
+  background: var(--sub-color);
+}
 
-
-
-
-
-/*solution*/
 
 /* solution */
 .accordion_list{

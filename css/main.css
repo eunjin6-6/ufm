@@ -105,8 +105,8 @@ body{
   gap: 60px;
 }
 .main_menu li{
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
 }
 .main_menu li a{
   color: var(--white);
@@ -139,21 +139,30 @@ body{
 }
 .banner .banner_content li{
   display: none;
+  position:relative
 }
 
 .banner .banner_content li.active{
   display: block;
 } 
-
+/* 
 .banner .overlay{
   position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(34,34,34,.6);
+} */
+.banner .banner_content li.slide1::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(34,34,34,.6);
 }
 .banner .container{
   position: relative;
-}
+} 
 .banner .banner_desc{
   position: absolute;
   top: 240px;
@@ -220,7 +229,7 @@ body{
   width: 80px;
   height: 6px;
   text-indent: -9999em;
-  background: var(--white);
+  background: rgba(255,255,255,.5);
 }
 .banner_pager a.active{
   background: var(--sub-color);
@@ -262,7 +271,7 @@ body{
 .business ul{
   display: flex;
   justify-content: center;
-  gap: 85px;
+  gap: 65px;
 }
 .business ul li{
   position: relative;

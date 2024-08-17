@@ -45,6 +45,7 @@ a{
   text-decoration: none;
   color: #111;
 }
-button{
+button, input{
 	border: none;
+	padding: 0;
 }

@@ -418,6 +418,7 @@ body{
 .partners{
   overflow: hidden;
   width: 100vw;
+  padding: calc(var(--line-base) * 3) 0;
 }
 .partners_list{
   display: flex;
@@ -428,7 +429,7 @@ body{
 }
 .partners_list a{
   width: 285px;
-  height: 102px;
+  height: calc(var(--line-base) ) * 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -448,5 +449,8 @@ body{
   top: 0;
   right: 0;  background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 40%, rgba(255,255,255,0) 100%);
 
+}
+.partners_list img{
+  width: 140px;
 }     
 /* footer */

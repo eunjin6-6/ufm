@@ -594,6 +594,11 @@ footer{
   border-top: 1px solid var(--light-gray);
   padding: calc(var(--line-base) * 3) 0;
   box-sizing: border-box;
+  font-size: 18px;
+}
+footer h2 img{
+  width: 190px;
+  object-fit: cover;
 }
 footer strong{
   font-size: 22px;
@@ -604,9 +609,9 @@ footer strong{
   display: flex;
   justify-content: space-between;
 }
-.footer_desc{
+/* .footer_desc{
   width: 560px;
-}
+} */
 .footer_desc p{
   font-weight: 600;
   margin-top: 8px;
@@ -619,7 +624,7 @@ footer strong{
 }
 .footer_list{
   display: flex;
-  width: 408px;
+  /* width: 408px; */
   gap: 20px;
   font-weight: 600;
 }

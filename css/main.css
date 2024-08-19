@@ -212,6 +212,10 @@ body{
   z-index: 2;
   display: none;
 }
+
+.top_nav.on .form_wrapper{
+  display: block;
+}
 .top_nav form input{
   width: 600px;
   height: 38px;
@@ -350,6 +354,7 @@ body{
 /* solution */
 .accordion_list{
   display: flex;
+  gap: 1px;
 }
 .inner_box{
   display: none;
@@ -357,13 +362,41 @@ body{
 .accordion_list li{
   flex:1;
   transition: flex 0.5s;
+  height: 594px;
+  width: 58px;
+  background: #F3F4F9;
+}
+.accordion_list .accordian_tit_box{
+  position: relative;
+}
+.accordion_list .accordian_tit_box .inner_box{
+  position: absolute;
+  width: 100%;
+  padding: 450px 0 0 60px;
+  box-sizing: border-box;
+}
+.accordion_list .accordian_tit_box .inner_box h4{
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.accordion_list .accordian_tit_box .list_tit{
+  font-size: 22px;
+  font-weight: 500;
+  writing-mode: vertical-rl;
+  margin: 30px auto;
 }
 .accordion_list li:hover,
 .accordion_list li.active{
   flex:10;
 }
+.accordion_list li.active .list_tit{
+  display: none;
+}
 .accordion_list li.active .inner_box{
   display: block;
+  color: var(--white);
+  height: 594px;
 }
 .accordion_list li:nth-child(1) .inner_box{
   background: url(../images/solution_img1.jpg) no-repeat center/cover;

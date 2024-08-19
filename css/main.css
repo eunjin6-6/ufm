@@ -92,11 +92,17 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-.top_nav.sticky{
+/* .top_nav.sticky{
   padding: 32px 0;
   position: fixed;
   top: 0; left: 0; right: 0;
   background: rgba(255,255,255,0.95);
+  box-shadow:0 3px 5px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.05);
+} */
+ .top_nav.sticky{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(255,255,255.1);
   box-shadow:0 3px 5px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.05);
 }
 .top_nav.sticky header a{
@@ -143,14 +149,53 @@ body{
 .sitemap li.search_icon a{
   text-indent: -9999em;
   background: url(../images/top_search_icon_w.svg) no-repeat;
+  position: relative;
+}
+.top_nav.sticky .sitemap li.search_icon a{
+  text-indent: -9999em;
+  background: none;
+  position: relative;
+}
+.sitemap .search_icon.on a{
+  text-indent: -9999em;
+  background: none;
+}
+.sitemap .search_icon a::before{
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--txt-color);
+  transform: rotate(45deg);
+  left: -1px;
+  top: 13px;
+  width: 120%;
+  height: 2px;
+  display: none;
+}
+.sitemap .search_icon a::after{
+  content: '';
+  display: block;
+  position: absolute;
+  background: var(--txt-color);
+  transform: rotate(-45deg);
+  left: -1px;
+  top: 13px;
+  width: 120%;
+  height: 2px;
+  display: none;
 }
 .top_nav.sticky header .search_icon a{
   background: url(../images/top_search_icon_b.svg) no-repeat;
 }
-.search_icon .search_close_icon{
+/* .search_icon .search_close_icon{
   position: absolute;
   top: 0;
   left: 0;
+} */
+.sitemap li.search_icon::after{
+  content: '';
+  width: 28px;
+  border-top: 1px solid #333;
 }
 .sitemap li.sitemap_icon a{
   text-indent: -9999em;
@@ -165,26 +210,31 @@ body{
   background: var(--white);
   text-align: center;
   z-index: 2;
+  display: none;
 }
 .top_nav form input{
   width: 600px;
+  height: 38px;
   border-bottom: 2px solid var(--txt-color);
   padding: 12px;
-  font-size: 28px;
+  font-size: 26px;
   outline: none;
+}
+.top_nav form input:focus{
+  border-bottom: 2px solid var(--sub-color);
 }
 .top_nav form input::placeholder{
   color: var(--light-gray);
 }
 .top_nav form button{
-  background: url(../images/top_search_icon_b.svg) no-repeat center center;
-  width: 50px;
-  height: 50px;
+  background: url(../images/top_search_icon_b.svg) no-repeat 0 bottom / 100% 100%;
+  width: 38px;
+  height: 38px;
   text-indent: -9999em;
   cursor: pointer;
 }
 .form_dim{
-  /* display: none; */
+  display: none;
     position: fixed;
     top: 100px;
     left: 0px;

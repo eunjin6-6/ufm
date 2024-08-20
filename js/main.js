@@ -9,12 +9,12 @@ const partners = document.querySelectorAll(".partners ul");
 //상단 메뉴 마우스 오버시 서브메뉴펼쳐지게
 //상단 메뉴 마우스 오버시 배경 흰색, 글자 검정색
 menu.addEventListener('mouseover',function(){
-	header.style.height = '350px';
+	header.style.height = '340px';
   header.classList.add('active');
   
 });
 menu.addEventListener('mouseout',function(){
-	header.style.height = '100px';
+	header.style.height = '80px';
   header.classList.remove('active');
 });
 

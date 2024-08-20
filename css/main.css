@@ -99,7 +99,7 @@ body{
   background: rgba(255,255,255,0.95);
   box-shadow:0 3px 5px rgba(0,0,0,.1), 0 3px 10px rgba(0,0,0,.05);
 } */
- .top_nav.sticky{
+ /* .top_nav.sticky{
   position: fixed;
   top: 0; left: 0; right: 0;
   background: rgba(255,255,255.1);
@@ -109,7 +109,9 @@ body{
   transform: scale(80%);
   color: var(--txt-color);
   font-size: 20px;
-}
+} */
+
+
 .top_nav .logo a{
   display: block;
   width: 232px;
@@ -118,6 +120,7 @@ body{
   text-indent: -9999em;
 }
 .top_nav nav{
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -234,7 +237,7 @@ body{
   width: 600px;
   height: 38px;
   border-bottom: 2px solid var(--txt-color);
-  padding: 12px;
+  padding: 0 12px;
   font-size: 26px;
   outline: none;
 }
@@ -285,7 +288,7 @@ body{
   content: '';
   position: absolute;
   top: 0; left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: rgba(34,34,34,.6);
 }
@@ -341,7 +344,7 @@ body{
 }
 
 .banner .banner_content img{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
 }
@@ -465,7 +468,7 @@ body{
   height: 324px;
 }
 
-.business ul li:hover img{
+.business ul li img{
   transition: transform 0.3s;
 }
 .business ul li:hover img{
@@ -567,7 +570,7 @@ body{
 /* partners */
 .partners{
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
   padding: calc(var(--line-base) * 3) 0;
 }
 .partners_list{

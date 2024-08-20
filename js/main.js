@@ -2,6 +2,9 @@ let menu = document.querySelector('.main_menu');
 let header = document.querySelector('.top_nav');
 const body = document.body;
 let lastScroll = 0;
+let partnerSec = document.querySelector('.partners');
+let partnerList = document.querySelector('.partner_list');
+const partners = document.querySelectorAll(".partners ul");
 
 //상단 메뉴 마우스 오버시 서브메뉴펼쳐지게
 //상단 메뉴 마우스 오버시 배경 흰색, 글자 검정색
@@ -70,4 +73,61 @@ window.addEventListener('scroll',()=>{
     }  
   }
 });
+
+//파트너스 로고 무한 슬라이드
+const copy = document.querySelector(".partners_list").cloneNode(true);
+partnerSec.appendChild(copy);
+
+//마우스 오버시 슬라이드 애니메이션 멈추기
+/*
+partnerSec.addEventListener('mouseenter',()=>{
+  for(list of partners){
+    list.style.animationPlayState = "paused";
+  }
+});
+partnerSec.addEventListener('mouseleave',()=>{
+  for(list of partners){
+    list.style.animationPlayState = "running";
+  }
+});
+*/
+
+/*
+//자바스크립트로 css 애니메이션 구현하기
+  for(list of partners){
+    list.animate(
+      // keyframes
+      [
+          { transform: "translateX(0)"},
+          { transform: "translateX(-100%)"}
+      ],
+      // options
+      {
+          duration: 15000,
+          easing: "linear",
+          fill: "forwards",
+          iterations: Infinity
+      }
+  );
+  }
+*/
+ // 키프레임과 옵션 분리
+ //const box = document.querySelector(".box");
+ /*
+ let keyframes = [
+    { transform: "translateX(0)"},
+    { transform: "translateX(-100%)"}
+ ];
+ let options = {
+    duration: 20000,
+    easing: "linear",
+    fill: "forwards",
+    iterations: Infinity
+ };
+
+ for(list of partners){
+   list.animate(keyframes, options);
+ }
+*/
+
 

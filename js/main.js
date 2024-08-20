@@ -8,13 +8,11 @@ let lastScroll = 0;
 menu.addEventListener('mouseover',function(){
 	header.style.height = '350px';
   header.classList.add('active');
-  header.style.background = 'linear-gradient(#fff 100px, rgba(255,255,255,.9) 100px, rgba(255,255,255,.9))';
   
 });
 menu.addEventListener('mouseout',function(){
 	header.style.height = '100px';
   header.classList.remove('active');
-  header.style.background = 'none';
 });
 
 
@@ -32,13 +30,12 @@ window.addEventListener('scroll',()=>{
   let currentScroll = window.scrollY;
 
   if(currentScroll > lastScroll){
-    header.classList.remove('d_none');
+    header.classList.remove('deactive');
     header.classList.add('active');
   } else if(currentScroll < lastScroll){
     header.classList.remove('active');
-    header.classList.add('d_none');
+    header.classList.add('deactive');
   }
-  
   lastScroll = currentScroll; 
 });
 
@@ -56,12 +53,16 @@ window.addEventListener('scroll',()=>{
       console.log(numbers);
       numbers.forEach(item=>{
       let oneLimit = Number(item.getAttribute('data-num'));
+      console.log(oneLimit);
       let count = 0;
       let autoNumber = setInterval(()=>{
-      count++;
+      count+=100;
       item.innerText = count;
-        if(count === oneLimit){
+        if (count >= oneLimit) {
+          item.innerText = oneLimit.toLocaleString();
           clearInterval(autoNumber);
+        } else {
+          item.innerText = count.toLocaleString();
         }
       }, 50);
       });

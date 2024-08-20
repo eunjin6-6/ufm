@@ -19,8 +19,6 @@ menu.addEventListener('mouseout',function(){
 
 
 //스크롤시 active 추가
-//위로 올리면 없어지게
-
 window.addEventListener('scroll',()=>{
   if(window.scrollY > 0){
     header.classList.add('active');
@@ -29,17 +27,10 @@ window.addEventListener('scroll',()=>{
   }
 });
 
-
+//위로 올리면 없어지게
 window.addEventListener('scroll',()=>{
   let currentScroll = window.scrollY;
-/*
-  스크롤을 아래로 하면
-    **먼저, scroll-up은 제거
-    body에 scroll-down 클래스명으로 추가
-  스크롤을 위로 하면
-    body에 scroll-down 클래스명으로 제거
-    body에 scroll-up 클래스명으로 추가
-*/
+
   if(currentScroll > lastScroll){
     header.classList.remove('d_none');
     header.classList.add('active');
@@ -48,8 +39,34 @@ window.addEventListener('scroll',()=>{
     header.classList.add('d_none');
   }
   
-  lastScroll = currentScroll; //위치 꼭 여기
+  lastScroll = currentScroll; 
 });
 
 
+
+//performance 스크롤 넘버 카운팅 이벤트
+let numbersWrap = document.querySelector('.performance');
+let numbersOST = numbersWrap.offsetTop - 500;
+let animated = false;
+
+window.addEventListener('scroll',()=>{
+  if(window.scrollY > numbersOST){
+    if(!animated){
+      let numbers = document.querySelectorAll('.performance .number');
+      console.log(numbers);
+      numbers.forEach(item=>{
+      let oneLimit = Number(item.getAttribute('data-num'));
+      let count = 0;
+      let autoNumber = setInterval(()=>{
+      count++;
+      item.innerText = count;
+        if(count === oneLimit){
+          clearInterval(autoNumber);
+        }
+      }, 50);
+      });
+      animated = true;
+    }  
+  }
+});
 

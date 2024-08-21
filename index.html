@@ -37,6 +37,33 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+  <div class="popup">
+    <div class="pophd">
+      <img src="images/logo.svg" alt="팝업창 로고">
+      <p>UFM Systems renual page</p>
+    </div>
+    <h2>본 사이트는 구직용 포트폴리오 웹사이트이며,
+    <br>실제로 운영되는 사이트가 아닙니다.</h2>
+    <hr>
+    <div class="popct">
+      <p>프로젝트 명: UFM Systems 웹사이트 리뉴얼</p>
+      <p>제작기간: 2024. 07. 04 ~ 2024. 08. 22</p>
+      <p>개발환경: html5, css3, javascript</p>
+      <div class="link">
+        <p>기획서: <a href="">피그마</a></p>
+        <p>코드: <a href="" class="git">깃허브</a></p>
+      </div>
+    </div>
+    <hr>
+    <p>기획 100% / 디자인 100% / 구현 100% : 홍은진</p>
+    <div class="cookie">
+      <div class="cookie_input">
+        <label for="check">하루 동안 안 보기</label>
+        <input type="checkbox" id="check">
+      </div>
+      <button id="button">닫기</button>
+    </div>
+  </div>
   <div class="top_content">
     <div class="top_nav">
       <header class="container">
@@ -100,14 +127,13 @@
       </div>
       <div class="form_dim"></div>
     </div>
-
     <!-- 슬라이드 배너 -->
     <div class="slide-wrapper">
       <ul class="slide-container">
         <li class="slide1 active">
           <div class="slide_desc container">
             <h3>UFM Systems</h3>
-            <h2 class="mt_2 mb_2">편리하고 안전한 우리의 미래를 만들어갑니다.</h2>
+            <h2 class="mt_2 mb_2">편리하고 안전한 우리의 오늘을 만들어갑니다.</h2>
             <p class="mb_3">Smart Traffic Solutions : Our ITS</p>
             <div class="slide_btn">
               <a class="more" href="" >Read More</a>
@@ -120,7 +146,7 @@
         <li class="slide2">
           <div class="slide_desc container">
             <h3>UFM Systems</h3>
-            <h2 class="mt_2 mb_2">두번째 타이틀 텍스트입니다.</h2>
+            <h2 class="mt_2 mb_2">앞서가는 기술력으로 우리의 <br>미래를 빛나게합니다.</h2>
             <p class="mb_3">Smart Traffic Solutions : Our ITS</p>
             <div class="slide_btn">
               <a class="more" href="" >Read More</a>
@@ -133,7 +159,7 @@
         <li class="slide3">
           <div class="slide_desc container">
             <h3>UFM Systems</h3>
-            <h2 class="mt_2 mb_2">세번째 타이틀 텍스트입니다.</h2>
+            <h2 class="mt_2 mb_2">차별화된 경쟁력으로 우리의 <br>내일을 바라봅니다.</h2>
             <p class="mb_3">Smart Traffic Solutions : Our ITS</p>
             <div class="slide_btn">
               <a class="more" href="" >Read More</a>
@@ -285,7 +311,7 @@
     </section>
     <section class="partners">
       <h2 class="hidden">협력사</h2>
-      <ul class="partners_list">
+      <ul class="partner_list">
         <li><a href=""><img src="images/partners_logo1.png" alt="서울특별시 로고"></a></li>
         <li><a href=""><img src="images/partners_logo2.png" alt="안산시 로고"></a></li>
         <li><a href=""><img src="images/partners_logo3.png" alt="GS건설 로고"></a></li>

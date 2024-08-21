@@ -315,7 +315,7 @@ body{
   background-position: center center;
   background-size: cover;
   opacity: 0;
-  transition : opacity 0.5s ease-out;
+  transition : 0.5s ease-out;
   visibility: hidden;
 }
 .slide-container > li::after {
@@ -419,98 +419,6 @@ body{
   background: var(--sub-color);
 }
 
-
-/* 이전 슬라이드
-.banner{
-  position: relative;
-}
-.banner .banner_content li{
-  display: none;
-  position:relative
-}
-
-.banner .banner_content li.active{
-  display: block;
-} 
-.banner .banner_content li.slide1::before{
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(34,34,34,.6);
-}
-.banner .container{
-  position: relative;
-} 
-.banner .banner_desc{
-  position: absolute;
-  top: 240px;
-  left: 0;
-  color: var(--white);
-}
-.banner_desc h3{
-  font-size: 38px;
-  font-weight: 500;
-}
-.banner_desc h2{
-  font-size: 52px;
-  font-weight: 700;
-  width: 640px;
-  line-height: 62px;
-}
-.banner_desc p{
-  font-size: 24px;
-  font-weight: 500;
-}
-.banner_desc .banner_btn{
-  display: flex;
-  align-items: center;
-}
-.banner_desc .banner_btn .more{
-  width: 178px;
-  height: 60px;
-  border: solid 2px var(--white);
-  border-radius: 30px;
-  color: var(--white);
-  line-height: 60px;
-  text-align: center;
-  font-weight: 600;
-}
-.banner_desc .banner_btn .icon{
-  width: 60px;
-  height: 60px;
-  background: var(--sub-color);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-}
-.banner_desc .banner_btn .icon span{
-  transform: rotate(45deg);
-}
-
-
-.banner .banner_pager{
-  position: absolute;
-  left: 0; right: 0;
-  display: flex;
-  justify-content: center;
-  bottom: 85px;
-  gap: 2px;
-}
-
-.banner_pager a{
-  width: 80px;
-  height: 6px;
-  text-indent: -9999em;
-  background: rgba(255,255,255,.5);
-}
-.banner_pager a.active{
-  background: var(--sub-color);
-}
-*/
 
 /* solution 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

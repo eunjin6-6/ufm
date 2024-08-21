@@ -27,9 +27,12 @@ menu.addEventListener('mouseover',function(){
   header.classList.add('active');
   
 });
-menu.addEventListener('mouseout',function(){
+menu.addEventListener('mouseleave',function(){
 	header.style.height = '80px';
-  header.classList.remove('active');
+  setTimeout(()=>{
+    header.classList.remove('active');
+  }, 500)
+ 
 });
 
 

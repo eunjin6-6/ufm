@@ -12,13 +12,9 @@ let autoFade;
 const pager = slideWrapper.querySelector('.slide_pager');
 let pagerHTML = '';
 
-
 let partnerSec = document.querySelector('.partners');
 let partnerList = document.querySelector('.partner_list');
 const partners = document.querySelectorAll(".partners ul");
-
-
-
 
 
 //----------------------------------------------------------------------- 
@@ -56,8 +52,14 @@ window.addEventListener('scroll',()=>{
   } else if(currentScroll < lastScroll){
     header.classList.remove('active');
     header.classList.add('deactive');
+  }  
+  
+  if(currentScroll === 0){
+    header.classList.remove('deactive');
   }
+
   lastScroll = currentScroll; 
+  
 });
 
 
@@ -191,6 +193,8 @@ window.addEventListener('scroll',()=>{
 const copy = document.querySelector(".partners_list").cloneNode(true);
 partnerSec.appendChild(copy);
 
+
+
 //마우스 오버시 슬라이드 애니메이션 멈추기
 /*
 partnerSec.addEventListener('mouseenter',()=>{
@@ -223,10 +227,10 @@ partnerSec.addEventListener('mouseleave',()=>{
       }
   );
   }
-*/
+
  // 키프레임과 옵션 분리
  //const box = document.querySelector(".box");
- /*
+ 
  let keyframes = [
     { transform: "translateX(0)"},
     { transform: "translateX(-100%)"}
@@ -242,4 +246,25 @@ partnerSec.addEventListener('mouseleave',()=>{
    list.animate(keyframes, options);
  }
 */
+
+
+
+
+
+//----------------------------------------------------------------------- 
+// back to top 버튼
+//----------------------------------------------------------------------- 
+const btt = document.querySelector('.back_to_top');
+
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 300){
+    btt.classList.add('active');
+  }else{
+    btt.classList.remove('active');
+  }
+});
+btt.addEventListener('click',(e)=>{
+  e.preventDefault();
+  window.scrollTo({left:0, top:0, behavior:'smooth'});
+});
 

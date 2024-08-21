@@ -12,7 +12,7 @@
   --sub-color: #279ADB;
   --medium-gray: #777;
   --light-gray: #DFDFDF;
-  --container: 1350px;
+  --container: 1280px;
   --font-base:16px;
   --line-base:27px;
 }
@@ -426,67 +426,99 @@ body{
   display: flex;
   gap: 1px;
 }
-.inner_box{
-  display: none;
-}
 .accordion_list li{
   flex:1;
   transition: flex 0.5s;
-  height: 594px;
+  height: 567px;
   width: 58px;
   background: #F3F4F9;
+  border-top: 5px solid var(--Primary-color);
+  box-sizing: border-box;
+  cursor: pointer;
 }
 .accordion_list .accordian_tit_box{
   position: relative;
 }
 .accordion_list .accordian_tit_box .inner_box{
-  position: absolute;
   width: 100%;
-  padding: 450px 0 0 60px;
-  box-sizing: border-box;
+  opacity: 0;
+  position: relative;
+}
+.accordion_list .accordian_tit_box .inner_box .inner_text{
+  position: absolute;
+  bottom: calc(var(--line-base) *2);
+  left: 60px;
   color: var(--white);
+  transform: translateY(200px);
+  overflow: hidden;
+  opacity: 0;
+  transition: 1s;
 }
 .accordion_list .accordian_tit_box .inner_box h4{
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0 0 12px;
+}
+.accordion_list .accordian_tit_box .inner_box small{
+  font-size: 15px;
   font-weight: 500;
-  margin-bottom: 20px;
+  vertical-align: baseline;
+  margin-left: 10px;
+  color: #ccc;
 }
 .accordion_list .accordian_tit_box .list_tit{
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 500;
   writing-mode: vertical-rl;
   margin: 30px auto;
+  letter-spacing: -1.5px;
 }
-/* .accordion_list li:hover,
-.accordion_list li.active{
-  flex:10;
-} */
+.accordion_list .accordian_tit_box .list_tit a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
+.accordion_list li:nth-child(1) .inner_box{
+  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(2) .inner_box{
+  background: url(../images/solution_img2.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(3) .inner_box{
+  background: url(../images/solution_img3.jpg) no-repeat center/cover;
+}
+.accordion_list li:nth-child(4) .inner_box{
+  background: url(../images/solution_img4.jpg) no-repeat center/cover;
+}
+
+
+/*accordion active 효과*/
 .accordion_list li.active{
   flex:10;
+  border-top: none;
 }
 .accordion_list li.active .list_tit{
   display: none;
 }
 .accordion_list li.active .inner_box{
-  display: block;
-  height: 594px;
+  height: 567px;
+  opacity: 1;
 }
-.accordion_list li:nth-child(1) .inner_box{
-  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+.accordion_list li.active .inner_box .inner_text{
+  opacity: 1;
+  transform: translateY(0);
 }
-.accordion_list li:nth-child(2) .inner_box{
-  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+.accordion_list li.active .inner_box > * {
+  z-index: 1;
 }
-.accordion_list li:nth-child(3) .inner_box{
-  background: url(../images/solution_img1.jpg) no-repeat center/cover;
+.accordion_list li.active .inner_box::after{
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(34,34,34,.5);
 }
-.accordion_list li:nth-child(4) .inner_box{
-  background: url(../images/solution_img1.jpg) no-repeat center/cover;
-}
-/*li active 있을 때,
-list_tit h4 없어지고, 
-li 이미지 inner_box 배경 나오고, 글자들 나오게*/
+
 
 /* business 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

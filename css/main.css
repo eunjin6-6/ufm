@@ -99,7 +99,7 @@ body{
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 10;
   overflow: hidden;
   transition : 0.5s ease-out;
 }
@@ -293,7 +293,134 @@ body{
 }
 
 
-/* BANNER */
+/* SLIDE 다시 구현 */
+.slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.slide-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-container > li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0;
+  transition : opacity 0.5s ease-out;
+  visibility: hidden;
+}
+.slide-container > li::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(34,34,34,.6);
+}
+.slide-container > li.active{
+  opacity: 1;
+  visibility: visible;
+}
+.slide1 {
+  background-image: url(../images/banner_img1.jpg);
+}
+
+.slide2 {
+  background-image: url(../images/banner_img2.jpg);
+}
+
+.slide3 {
+  background-image: url(../images/banner_img1.jpg);
+}
+
+.slide-container .slide_desc{
+  position: relative;
+  z-index: 1;
+  padding-top: 260px;
+}
+.slide-container > li .slide_desc > * {
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s 0.4s ease-in-out;
+}
+
+.slide-container > li.active .slide_desc > * {
+  opacity: 1;
+}
+
+.slide_desc h3{
+  font-size: 32px;
+  font-weight: 500;
+}
+.slide_desc h2{
+  font-size: 48px;
+  font-weight: 600;
+  width: 620px;
+  line-height: 62px;
+  transform: translateX(-6px);
+}
+.slide_desc p{
+  font-size: 24px;
+  font-weight: 500;
+}
+.slide_desc .slide_btn{
+  display: flex;
+  align-items: center;
+}
+.slide_desc .slide_btn .more{
+  width: 178px;
+  height: 60px;
+  border: solid 2px var(--white);
+  border-radius: 30px;
+  color: var(--white);
+  line-height: 60px;
+  text-align: center;
+  font-weight: 600;
+}
+.slide_desc .slide_btn .icon{
+  width: 60px;
+  height: 60px;
+  background: var(--sub-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+.slide_desc .slide_btn .icon span{
+  transform: rotate(45deg);
+}
+
+.slide_pager{
+  position: absolute;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  bottom: 85px;
+  gap: 2px;
+}
+
+.slide_pager a{
+  width: 80px;
+  height: 6px;
+  text-indent: -9999em;
+  background: rgba(255,255,255,.5);
+}
+.slide_pager a.active{
+  background: var(--sub-color);
+}
+
+
+/* 이전 슬라이드
 .banner{
   position: relative;
 }
@@ -305,13 +432,6 @@ body{
 .banner .banner_content li.active{
   display: block;
 } 
-/* 
-.banner .overlay{
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(34,34,34,.6);
-} */
 .banner .banner_content li.slide1::before{
   content: '';
   position: absolute;
@@ -371,11 +491,7 @@ body{
   transform: rotate(45deg);
 }
 
-.banner .banner_content img{
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
+
 .banner .banner_pager{
   position: absolute;
   left: 0; right: 0;
@@ -394,7 +510,7 @@ body{
 .banner_pager a.active{
   background: var(--sub-color);
 }
-
+*/
 
 /* solution 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

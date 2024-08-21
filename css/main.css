@@ -444,6 +444,7 @@ body{
   width: 100%;
   padding: 450px 0 0 60px;
   box-sizing: border-box;
+  color: var(--white);
 }
 .accordion_list .accordian_tit_box .inner_box h4{
   font-size: 26px;
@@ -456,7 +457,11 @@ body{
   writing-mode: vertical-rl;
   margin: 30px auto;
 }
-.accordion_list li:hover,
+/* .accordion_list li:hover,
+.accordion_list li.active{
+  flex:10;
+} */
+
 .accordion_list li.active{
   flex:10;
 }
@@ -465,7 +470,6 @@ body{
 }
 .accordion_list li.active .inner_box{
   display: block;
-  color: var(--white);
   height: 594px;
 }
 .accordion_list li:nth-child(1) .inner_box{
@@ -480,7 +484,9 @@ body{
 .accordion_list li:nth-child(4) .inner_box{
   background: url(../images/solution_img1.jpg) no-repeat center/cover;
 }
-
+/*li active 있을 때,
+list_tit h4 없어지고, 
+li 이미지 inner_box 배경 나오고, 글자들 나오게*/
 
 /* business 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

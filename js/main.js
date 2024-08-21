@@ -1,7 +1,12 @@
-let menu = document.querySelector('.main_menu');
 let header = document.querySelector('.top_nav');
+let menu = document.querySelector('.main_menu');
 const body = document.body;
 let lastScroll = 0;
+
+const searchBtn = header.querySelector('.search_icon a');
+const formWrap = header.querySelector('.form_wrapper');
+const formDim = header.querySelector('.form_dim');
+
 
 const slideWrapper = document.querySelector('.slide-wrapper');
 const slides = document.querySelectorAll('.slide-container li');
@@ -14,7 +19,53 @@ let pagerHTML = '';
 
 let partnerSec = document.querySelector('.partners');
 let partnerList = document.querySelector('.partner_list');
-const partners = document.querySelectorAll(".partners ul");
+const partners = document.querySelectorAll('.partners ul');
+
+const popup = document.querySelector('.popup');
+const check = document.querySelector('#check');
+const button = document.querySelector('#button');
+
+//----------------------------------------------------------------------- 
+//쿠키 팝업 이벤트
+//----------------------------------------------------------------------- 
+button.addEventListener('click',()=>{
+  if(check.checked){
+    setCookie('Company','ABC',1);
+  } else{
+    delCookie('Company','ABC');
+  }
+  popup.classList.remove('show');
+});
+
+//체크하고 닫으면 쿠키 생성하는 함수
+function setCookie(name,val,due){
+  let date = new Date();
+  date.setDate(date.getDate() + due); 
+
+  let myCookie = `${name}=${val};expires=` + date.toUTCString(); 
+  document.cookie = myCookie;
+}
+
+//체크하고 닫으면 쿠키 지우는
+function delCookie(name,val){
+  let date = new Date();
+  date.setDate(date.getDate() -1);
+  let myCookie = `${name}=${val};expires=` + date.toUTCString();
+  document.cookie = myCookie;
+}
+
+
+function checkCookie(name,val){
+
+let cookie = document.cookie.indexOf(`${name}=${val}`);
+  if(cookie === -1){ 
+    popup.classList.add('show');
+  }
+}
+
+//열자마자 작동
+checkCookie('Company','ABC'); 
+
 
 
 //----------------------------------------------------------------------- 
@@ -65,6 +116,13 @@ window.addEventListener('scroll',()=>{
   
 });
 
+//----------------------------------------------------------------------- 
+// search Input 이벤트
+//----------------------------------------------------------------------- 
+
+searchBtn.addEventListener('click',()=>{
+  body.classList.toggle('search_on');
+});
 
 
 //----------------------------------------------------------------------- 
@@ -93,7 +151,7 @@ function autoFadeStart(){
   autoFade = setInterval(function(){ 
     let nextIdx = (currentIdx + 1)% slideCount; //3로 나눈 나머지
     showSlide(nextIdx);
-  }, 2000);
+  }, 3000);
 }
 //위에는 함수 할 일 정의, 열자마자 함수 실행
 autoFadeStart();
@@ -210,7 +268,7 @@ window.addEventListener('scroll',()=>{
 //----------------------------------------------------------------------- 
 //파트너스 로고 무한 슬라이드
 //----------------------------------------------------------------------- 
-const copy = document.querySelector(".partners_list").cloneNode(true);
+const copy = document.querySelector('.partner_list').cloneNode(true);
 partnerSec.appendChild(copy);
 
 

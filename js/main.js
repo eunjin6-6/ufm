@@ -148,6 +148,23 @@ function updatePager(){
 
 updatePager(); //열자마자 실행해
 
+//----------------------------------------------------------------------- 
+//solution 아코디언 박스
+//----------------------------------------------------------------------- 
+
+const accorWrap =  document.querySelector('.accordion_list');
+const accorLists =  accorWrap.querySelectorAll('.accordion_list li');
+
+for (let list of accorLists){
+  list.addEventListener('mouseover',()=>{
+    for(let item of accorLists){
+      item.classList.remove('active');
+    }
+    list.classList.add('active');
+  });
+}
+
+
 
 
 

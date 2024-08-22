@@ -189,7 +189,6 @@ body{
   justify-content: space-between;
   align-items: center;
 }
-
 .top_nav .logo a{
   display: block;
   width: 232px;
@@ -598,6 +597,7 @@ body{
 .business ul li{
   position: relative;
   width: 460px;
+  cursor: pointer;
 }
 .business ul li a{
   position: absolute; 
@@ -613,16 +613,6 @@ body{
   opacity: .8;
 }
 
-/* .business ul li::before{
-  content: '';
-  position: absolute;
-  top: 0; left: 0; 
-  width: 460px;
-  height: 324px;
-  background: rgba(34,34,34,.6);
-  opacity: 0;
-  transition: .3s;
-} */
 .business ul li .business_img_wrapper {
   overflow: hidden;
   width: 460px;
@@ -829,7 +819,10 @@ footer strong{
   gap: 20px;
   font-weight: 600;
 }
-
+.footer_copy{
+  color: var(--medium-gray);
+  font-weight: 600;
+}
 .back_to_top{
   position: fixed;
   bottom: 50px;

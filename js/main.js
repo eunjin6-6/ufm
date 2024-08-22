@@ -1,11 +1,11 @@
-let header = document.querySelector('.top_nav');
 let menu = document.querySelector('.main_menu');
+let header = document.querySelector('.top_nav');
 const body = document.body;
 let lastScroll = 0;
 
-const searchBtn = header.querySelector('.search_icon a');
-const formWrap = header.querySelector('.form_wrapper');
-const formDim = header.querySelector('.form_dim');
+// const searchBtn = header.querySelector('.search_icon a');
+// const formWrap = header.querySelector('.form_wrapper');
+// const formDim = header.querySelector('.form_dim');
 
 
 const slideWrapper = document.querySelector('.slide-wrapper');
@@ -120,9 +120,9 @@ window.addEventListener('scroll',()=>{
 // search Input 이벤트
 //----------------------------------------------------------------------- 
 
-searchBtn.addEventListener('click',()=>{
-  body.classList.toggle('search_on');
-});
+// searchBtn.addEventListener('click',()=>{
+//   body.classList.toggle('search_on');
+// });
 
 
 //----------------------------------------------------------------------- 

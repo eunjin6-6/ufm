@@ -305,7 +305,7 @@ body{
   background: url(../images/top_sitemap.svg) no-repeat;
 }
 
-/* 검색창 모달 */
+/* 검색창 모달 
 .form_wrapper{
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -356,7 +356,7 @@ body{
   opacity: 0.9;
 }
 
-
+*/
 /* SLIDE 다시 구현 */
 .slide-wrapper {
   position: relative;

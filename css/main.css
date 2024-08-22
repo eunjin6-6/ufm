@@ -763,7 +763,7 @@ body{
   display: flex;
   justify-content: left;
   align-items: center;
-  animation: 20s partnerslide infinite linear;
+  animation: 25s partnerslide infinite linear;
 }
 .partner_list a{
   width: 285px;
